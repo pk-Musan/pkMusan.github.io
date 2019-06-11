@@ -17,5 +17,9 @@ def work(work_name):
     work = get_work(work_name)
     return render_template('/portfolio/work.html', work=work)
 
+@app.route('/profile.html')
+def profile():
+    return render_template('/profile.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
