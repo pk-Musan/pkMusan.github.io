@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h1>{{ work['name'] }}</h1>
+    <hr>
+    <img src="{{ url_for('static', filename=work.image) }}" alt="{{ work.name }}" width="300px">
+
+    <br><br>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th style="width:100px">タイトル</th>
+                <td>{{ work.name }}</td>
+            </tr>
+            <tr>
+                <th>説明</th>
+                <td>{{ work.description }}</td>
+            </tr>
+            <tr>
+                <th>作成日</th>
+                <td>{{ work.date }}</td>
+            </tr>
+            <tr>
+                <th>リンク</th>
+                <td>
+                    {% if work.github %}
+                        <a href="{{ work.github }}"><i class="fab fa-github fa-2x"></i></a>
+                    {% endif %}
+
+                    {% if work.url %}
+                        <a href="{{ work.url }}"><i class="fas fa-mobile-alt fa-2x"></i></a>
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

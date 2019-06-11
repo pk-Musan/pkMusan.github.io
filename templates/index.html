@@ -1,6 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div>
-        Hello
-    </div>
+<div class="hello">
+    <div class="hello-text">Musan's_Page</div>
+    <img class="home-icon rounded" src="{{ url_for('static', filename='images/homePage.JPG') }}" alt="homepage">
+</div>
+
+<div class="intro">
+    室谷敏生(むろたに としき)と申します。<br>IoTやWebサービスを扱ったスマートホーム，スマートシティに関する研究をしています。
+</div>
 {% endblock %}
